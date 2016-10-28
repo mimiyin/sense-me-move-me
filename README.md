@@ -38,11 +38,11 @@ Because course topics are organized around movement concepts, technical topics w
 - Understanding pathways emotionally + computationally.
 - 100 ways to interact with a path.
 - Drawing with body parts.
-- Computational techniques for more expressive drawing.
+- Computational techniques for expressive drawing.
 - Hello Kinect skeleton!
 
 ## Weeks 5-7: Reinventing The Human Form with Shapes and Textures
-- Abstracting the human form into lines and shapes. References in modern painting and sculpture.
+- Off-kilter and Out of Proportion: Abstracting the human form into lines and shapes. References in modern painting and sculpture.
 - Distorting the human form.
 - [Human Tetris](https://www.youtube.com/watch?v=EAP03tnG9WE)
 - Hello CV blobs and contours!
