@@ -72,7 +72,7 @@ Pre-requisites: Introduction to Computational Media or its equivalent.
 
 ##Grading
 - 40% for showing up (on time!) and participating with curiosity and enthusiasm.
-- 10% for each topic study.
+- 40% for topic studies.
 - 20% for the final project.
 - More than 2 unexcused absences qualifies you for a failure.
 
