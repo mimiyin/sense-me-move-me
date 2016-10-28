@@ -48,6 +48,7 @@ Because course topics are organized around movement concepts, technical topics w
 - Hello CV blobs and contours!
 - Hello CV face detection!
 - Hello Kinect depth map!
+- Hello Perception Neuron!
 
 ## Weeks 8-9: Traversing Space and Terrains
 - Creating "architecture" to direct movement. Crowd-control, directing traffic, herding cats.
