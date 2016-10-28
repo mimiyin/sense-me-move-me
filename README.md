@@ -9,6 +9,7 @@ The course is organized around 3 parameters of movement, 3 ways of understanding
    1. Pathways
    2. Form
    3. Space 
+   
 Assignments will consist of 1-2 small studies exploring each topic that culminate in a final project and showing.
 
 Because course topics are organized around movement concepts, technical topics will be introduced and built upon week to week. 
