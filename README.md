@@ -59,7 +59,7 @@ Because course topics are organized around movement concepts, technical topics w
 ## Showing: Week 12
 
 # Course Description
-A re-working of Choreographic Interventions (Spring 2016), this class is intended for anyone interested in using sensing technologies and movement to create interactive experiences.
+A re-working of [Choreographic Interventions](https://github.com/mimiyin/Choreographic-Interventions) (Spring 2016), this class is intended for anyone interested in using sensing technologies and movement to create interactive experiences.
 
 We are surrounded by interfaces where swipes and taps control elements on a screen. Less familiar are systems designed to compel us to move in new and unexpected ways. How do you make someone feel soft inside? How do you shake an entire room? How do you orchestrate duets between strangers?
 
