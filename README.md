@@ -10,7 +10,7 @@ The course is organized around 3 parameters of movement, 3 ways of understanding
    2. Form
    3. Space 
    
-Assignments will consist of 1-2 small studies exploring each topic that culminate in a final project and showing.
+Assignments will consist of a series small studies exploring each topic. The class will culminate in a final project and showing.
 
 Because course topics are organized around movement concepts, technical topics will be introduced and built upon week to week. 
 - What do cameras see? RGB v. IR
@@ -31,9 +31,30 @@ Because course topics are organized around movement concepts, technical topics w
 - Select chapters from [Dynamic Alignment Through Imagery](http://www.amazon.com/Dynamic-Alignment-Through-Imagery-Edition/dp/0736067892) | [Google Books](https://books.google.com/books?id=CBwV_g8DhEMC&lpg=PA2&ots=nRQ2JS3SWv&dq=dynamic%20alignment%20chapters&pg=PP1#v=onepage&q&f=false)
 
 ## Week 1: What is interaction?
+- From control to conversation to coincidence, what is the full spectrum of interaction?
+- The dramaturgy of numbers. Expressing emotion through computation.
+
 ## Weeks 2-4: Following Pathways of Motion
-## Weeks 5-6: Reinventing The Human Form with Shapes and Textures
-## Weeks 7-9: Traversing Space and Terrains
+- Understanding pathways emotionally + computationally.
+- 100 ways to interact with a path.
+- Drawing with body parts.
+- Computational techniques for more expressive drawing.
+- Hello Kinect skeleton!
+
+## Weeks 5-7: Reinventing The Human Form with Shapes and Textures
+- Abstracting the human form into lines and shapes. References in modern painting and sculpture.
+- Distorting the human form.
+- [Human Tetris](https://www.youtube.com/watch?v=EAP03tnG9WE)
+- Hello CV blobs and contours.
+- Hello CV face detection.
+- Hello Kinect depth map.
+
+## Weeks 8-9: Traversing Space and Terrains
+- Creating "architecture" to direct movement. Crowd-control, directing traffic, herding cats.
+- The dramaturgy of shapes. Expressing emotion through geometry.
+- 100 ways to interact with space and terrains.
+- Defining space and terrains through movement.
+
 ## Weeks 10-11: Project Development
 ## Showing: Week 12
 
