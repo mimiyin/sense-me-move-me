@@ -5,19 +5,19 @@
 - [Office Hours Signup](https://itp.nyu.edu/inwiki/Signup/Mimi)
 
 ###Course Structure | [See introductory description below.](#course-description)
-The course is organized around 3 parameters of movement, 3 ways of understanding motion: 
+The course is organized around 3 ways of understanding motion: 
    1. Pathways
    2. Form
    3. Space 
    
 Assignments will consist of a series small studies exploring each topic. The class will culminate in a final project and showing.
 
-Because course topics are organized around movement concepts, technical topics will be introduced and built upon week to week. 
+Because course topics are organized around parameters of movement, technical topics will be introduced and built upon week to week. 
 - What do cameras see? RGB v. IR
 - Kinect Skeletons
 - "Traditional" CV: Blob, Contours and Faces
 - Kinect Depth Maps
-- Gravity-based motion capture suits
+- Perception Neuron: Gravity-based motion capture suits
 
 "Soft Skills" we will practice:
 - Sketching movement ideas.
