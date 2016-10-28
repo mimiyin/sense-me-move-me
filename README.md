@@ -45,9 +45,9 @@ Because course topics are organized around movement concepts, technical topics w
 - Abstracting the human form into lines and shapes. References in modern painting and sculpture.
 - Distorting the human form.
 - [Human Tetris](https://www.youtube.com/watch?v=EAP03tnG9WE)
-- Hello CV blobs and contours.
-- Hello CV face detection.
-- Hello Kinect depth map.
+- Hello CV blobs and contours!
+- Hello CV face detection!
+- Hello Kinect depth map!
 
 ## Weeks 8-9: Traversing Space and Terrains
 - Creating "architecture" to direct movement. Crowd-control, directing traffic, herding cats.
