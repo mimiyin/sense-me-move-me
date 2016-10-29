@@ -35,11 +35,12 @@ Because course topics are organized around parameters of movement, technical top
 - From control to conversation to coincidence, what is the full spectrum of interaction?
 - The dramaturgy of numbers. Expressing emotion through computation.
 
-## Weeks 2-3: Following Pathways of Motion
+## Weeks 2-4: Following Pathways of Motion
 - Understanding pathways emotionally + computationally.
 - 100 ways to interact with a path.
 - Drawing with body parts.
 - Computational techniques for expressive drawing.
+- Drawing with sound.
 - Hello Kinect skeleton!
 - Studies:
    * Define a pathway with a rope. Interact with it in 10 different ways.
@@ -47,7 +48,7 @@ Because course topics are organized around parameters of movement, technical top
    * Draw with 3 different "computational" brushes.
    * Draw with 3 different body parts.
 
-## Weeks 4-6: Reinventing The Human Form with Shapes and Textures
+## Weeks 5-7: Reinventing The Human Form with Shapes and Textures
 - Off-kilter and out of proportion: Abstracting the human form into lines and shapes to affect balance. References in modern painting and sculpture.
 - Filled with sand: Distorting the human form to affect the texture of movement.
 - [Human Tetris](https://www.youtube.com/watch?v=EAP03tnG9WE)
@@ -72,14 +73,6 @@ Because course topics are organized around parameters of movement, technical top
    * Direct movement by dividing space or defining space through geometry.
    * Direct movement by creating a terrain.
    * Use movement to define space and terrains.
-
-## Week 9: Translating Motion into Sound
-- 100 ways to map movement to sound
-- Creating Soundscapes
-- Studies
-   * Map movement to sound in at least 10 different ways.
-   * Create a soundscape through movement with at least 3 different sound sources.
-   * Encourage a specific kind of movement through sound feedback.
    
 ## Weeks 10-11: Project Development
 ## Showing: Week 12
