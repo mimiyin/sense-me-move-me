@@ -10,7 +10,7 @@ The course is organized around 3 ways of understanding motion:
    2. Form
    3. Space 
    
-Assignments will consist of a series small studies exploring each topic. The class will culminate in a final project and showing.
+Assignments will consist of a series small studies exploring each topic. Some we will work on together in class. Others you will complete as homework assignments. The class will culminate in a final project and showing.
 
 Because course topics are organized around parameters of movement, technical topics will be introduced and built upon week to week. 
 - What do cameras see? RGB v. IR
@@ -20,6 +20,7 @@ Because course topics are organized around parameters of movement, technical top
 - Perception Neuron: Gravity-based motion capture suits
 
 "Soft Skills" we will practice:
+- Moving
 - Sketching movement ideas.
 - Defining rule sets for movement.
 - Deconstructing movement into parameters for code.
