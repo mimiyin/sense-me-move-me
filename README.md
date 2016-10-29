@@ -74,8 +74,7 @@ Because course topics are organized around parameters of movement, technical top
 
 ## Week 9: Translating Motion into Sound
 - 100 ways to map movement to sound
-- Pathways through Sound
-- Traversing Soundscapes
+- Creating Soundscapes
 - Studies
    * Map movement to sound in at least 10 different ways.
    * Create a soundscape through movement with at least 3 different sound sources.
