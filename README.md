@@ -34,28 +34,53 @@ Because course topics are organized around parameters of movement, technical top
 - From control to conversation to coincidence, what is the full spectrum of interaction?
 - The dramaturgy of numbers. Expressing emotion through computation.
 
-## Weeks 2-4: Following Pathways of Motion
+## Weeks 2-3: Following Pathways of Motion
 - Understanding pathways emotionally + computationally.
 - 100 ways to interact with a path.
 - Drawing with body parts.
 - Computational techniques for expressive drawing.
 - Hello Kinect skeleton!
+- Studies:
+   * Define a pathway with a rope. Interact with it in 10 different ways.
+   * Define a pathway computationally to direct movement.
+   * Draw with 3 different "computational" brushes.
+   * Draw with 3 different body parts.
 
-## Weeks 5-7: Reinventing The Human Form with Shapes and Textures
-- Off-kilter and Out of Proportion: Abstracting the human form into lines and shapes. References in modern painting and sculpture.
-- Distorting the human form.
+## Weeks 4-6: Reinventing The Human Form with Shapes and Textures
+- Off-kilter and out of proportion: Abstracting the human form into lines and shapes to affect balance. References in modern painting and sculpture.
+- Filled with sand: Distorting the human form to affect the texture of movement.
 - [Human Tetris](https://www.youtube.com/watch?v=EAP03tnG9WE)
 - Hello CV blobs and contours!
 - Hello CV face detection!
 - Hello Kinect depth map!
 - Hello Perception Neuron!
+- Studies
+   * Create 3 abstractions of the human form that play with our sense of balance.
+   * Create 3 distortions of the human form that change the texture of our movement.
+   * Build tunnels and doorways that force us to change our shape.
+   * Create a human tetris world.
 
-## Weeks 8-9: Traversing Space and Terrains
+## Weeks 8-9: Traversing Landscapes
 - Creating "architecture" to direct movement. Crowd-control, directing traffic, herding cats.
+- The dramaturgy of ratios. Expressing emotion through divisions of space.
 - The dramaturgy of shapes. Expressing emotion through geometry.
+- The dramaturgy of terrains. Expressing emotion through grids and meshes.
 - 100 ways to interact with space and terrains.
-- Defining space and terrains through movement.
+- 100 ways to define space and terrains through movement.
+- Studies
+   * Direct movement by dividing space or defining space through geometry.
+   * Direct movement by creating a terrain.
+   * Use movement to define space and terrains.
 
+## Week 9: Translating Motion into Sound
+- 100 ways to map movement to sound
+- Pathways through Sound
+- Traversing Soundscapes
+- Studies
+   * Map movement to sound in at least 10 different ways.
+   * Create a soundscape through movement with at least 3 different sound sources.
+   * Encourage a specific kind of movement through sound feedback.
+   
 ## Weeks 10-11: Project Development
 ## Showing: Week 12
 
