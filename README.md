@@ -49,8 +49,8 @@ Because course topics are organized around parameters of movement, technical top
    * Draw with 3 different body parts.
 
 ## Weeks 5-7: Reinventing The Human Form with Shapes and Textures
-- Off-kilter and out of proportion: Abstracting the human form into lines and shapes to affect balance. References in modern painting and sculpture.
-- Filled with sand: Distorting the human form to affect the texture of movement.
+- Off-kilter and out of proportion: Abstracting the human form into lines and shapes. References in modern painting and sculpture.
+- Filled with sand: Distorting the human form.
 - [Human Tetris](https://www.youtube.com/watch?v=EAP03tnG9WE)
 - Hello CV blobs and contours!
 - Hello CV face detection!
