@@ -5,19 +5,19 @@ Simply Polyrhythm Builder
 var sounds = [];
 var layers = [];
 
- function preload() {
-    for(var s=0; s < 14; s++) {
-     var file = 'sounds/' + s + '.mp3';
-        sounds.push(loadSound(file)); 
-    } 
- }
+function preload() {
+    for (var s = 0; s < 14; s++) {
+        var file = 'sounds/' + s + '.mp3';
+        sounds.push(loadSound(file));
+    }
+}
 
-function setup() { 
+function setup() {
     createCanvas(windowWidth, windowHeight);
     background(255);
 
     frameRate(30);
-  
+
     // Parameters Layer expects are:
     // Start value for counter
     // # of frames to count between beats
@@ -30,7 +30,7 @@ function setup() {
     layers.push(new Layer(0, 108, sounds[6]));
 
     // Initialize all the layers now that we know how many there are.
-    for(var l = 0; l < layers.length; l++) {
+    for (var l = 0; l < layers.length; l++) {
         layers[l].init(l);
     }
 }
@@ -40,4 +40,4 @@ function draw() {
     for (var l = 0; l < layers.length; l++) {
         layers[l].run();
     }
-} 
+}
