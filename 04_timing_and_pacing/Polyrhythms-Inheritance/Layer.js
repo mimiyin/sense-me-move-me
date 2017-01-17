@@ -1,6 +1,4 @@
-function Layer(mode, start, interval, sound, t, tspeed) {
-  this.mode = mode;
-
+var Layer = function(start, interval, sound) {
   // counter variable to count frames
   // Is also used to mark the x-location
   // of the beat on the screen
@@ -8,14 +6,6 @@ function Layer(mode, start, interval, sound, t, tspeed) {
   this.prevBeat = 0;
   this.interval = interval;
   this.sound = sound;
-
-  // Variables for wave functions, random and noise
-  // Maximum beat length
-  this.max = interval;
-  // Where we are in the function
-  this.t = t || 0;
-  // How fast we're moving through the function
-  this.tspeed = tspeed || 0;
 
   // Variables for drawing the beat to the screen
   this.y = 0;
@@ -26,7 +16,7 @@ function Layer(mode, start, interval, sound, t, tspeed) {
 
   // Figure out how much vertical space to give each layer
   // based on total number of layers
-  this.init = function (l) {
+  Layer.prototype.init = function (l) {
     this.ymin = l * height / layers.length;
     this.ymax = (l + 1) * height / layers.length;
     this.y = this.ymin;
@@ -35,21 +25,12 @@ function Layer(mode, start, interval, sound, t, tspeed) {
   // Run the counter
   // Play the beat when it's time
   // Draw the beat to the screen
-  this.run = function () {
+  Layer.prototype.run = function () {
     // If enough time has past, play a beat
     if (this.counter - this.prevBeat >= this.interval) {
-      this.t += this.tspeed;
-      switch (this.mode) {
-        case 1:
-          this.interval = cos(this.t) * this.max / 2 + this.max / 2 + 5;
-          break;
-        case 2:
-          this.interval = random(10, this.max);
-          break;
-        case 3:
-          this.interval = noise(this.t) * this.max;
-          break;
-      }
+      // Calculate the next interval value;
+      this.calc();
+
       // Remember when this beat happened.
       this.prevBeat = this.counter;
       // Play the beat.
@@ -78,4 +59,9 @@ function Layer(mode, start, interval, sound, t, tspeed) {
       this.y = this.ymin;
     }
   }
+
+  Layer.prototype.calc = function() {
+    // interval doesn't change
+  }
 }
+

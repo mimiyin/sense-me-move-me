@@ -22,17 +22,17 @@ function setup() {
     // Start value for counter
     // # of frames to count between beats
     // Sound file to play
-    layers.push(new Layer(0, 0, 30, sounds[0]));
-    layers.push(new Layer(0, 0, 60, sounds[1]));
+    layers.push(new Layer(0, 30, sounds[0]));
+    layers.push(new Layer(0, 60, sounds[1]));
 
     // Wave functions
-    // layers.push(new Layer(1, 0, 30, sounds[2], 0, 0.01));
-    // layers.push(new Layer(1, 0, 30, sounds[3], PI, 0.01));
-    // layers.push(new Layer(1, 0, 30, sounds[4], 0, 0.02));
+    layers.push(new WaveLayer(0, 30, sounds[2], 0, 0.01));
+    layers.push(new WaveLayer(0, 30, sounds[3], PI, 0.01));
+    // layers.push(new WaveLayer(0, 30, sounds[4], 0, 0.02));
 
     // Random v. Noise functions
-    // layers.push(new Layer(2, 0, 30, sounds[8]));
-    // layers.push(new Layer(3, 0, 30, sounds[9], 0, 0.01));
+    layers.push(new RandomLayer(0, 30, sounds[8]));
+    layers.push(new NoiseLayer(0, 30, sounds[9], 0, 0.01));
 
     // Initialize all the layers now that we know how many there are.
     for(var l = 0; l < layers.length; l++) {
