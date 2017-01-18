@@ -1,6 +1,6 @@
 /*
 Mimi Yin NYU-ITP
-Random random.
+A more random random.
 */
 
 var zoom;
