@@ -26,11 +26,11 @@ function draw() {
     x++;
 
     // Draw ellipse for sine wave
-    var y = sin(a)*r + height/2;
+    var y = sin(a)*r + yOffset;
     ellipse(x, y, 1, 1);
 
     // Draw ellipse for cosine wave
-    var y = cos(a)*r + height/2;
+    var y = cos(a)*r + yOffset;
     ellipse(x, y, 1, 1);
   }
 
@@ -41,11 +41,11 @@ function draw() {
   fill(255, 0, 0);
 
   // Draw dot for sine wave.
-  dotY = sin(dotA)*r + height/2;
+  dotY = sin(dotA)*r + yOffset;
   ellipse(dotX, dotY, 10, 10);
 
   // Draw dot for cosine wave.
-  dotY = sin(dotA + PI/2)*r + height/2;
+  dotY = sin(dotA + PI/2)*r + yOffset;
   ellipse(dotX, dotY, 10, 10);
 }
 
