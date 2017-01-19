@@ -20,19 +20,22 @@ function draw() {
   x += .2;
   y += .8;
 
-  // Draw3
+  // Draw linear pathway
   fill(255);
   ellipse(x, y, 10, 10);
   text("c", x + 10, y + 5);
 
-  // Draw x-component
+  // Draw x-component of pathway
+  fill(255, 16);
+  rect(0, 0, x, height);
   fill(255, 0, 0);
   ellipse(x, ystart, 10, 10);
   text("a", x + 10, ystart + 5);
 
-  // Draw y-component
+  // Draw y-component of pathway
+  fill(255, 8);
+  rect(0, 0, width, y);
   fill(0, 0, 255);
   ellipse(xstart, y, 10, 10);
   text("b", xstart - 20, y + 5);
-
 }
