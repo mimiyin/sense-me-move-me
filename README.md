@@ -5,14 +5,15 @@
 - [Office Hours Signup](https://itp.nyu.edu/inwiki/Signup/Mimi)
 
 ###Course Structure | [See introductory description below.](#course-description)
-The course is organized around 3 ways of understanding motion: 
+The course is organized around 4 ways of understanding motion:
    1. Pathways
    2. Form
-   3. Space 
-   
+   3. Space
+   4. Rhythm
+
 Assignments will consist of a series small studies exploring each topic. Some we will work on together in class. Others you will complete as homework assignments. The class will culminate in a final project and showing.
 
-Because course topics are organized around parameters of movement, technical topics will be introduced and built upon week to week. 
+Because course topics are organized around parameters of movement, technical topics will be introduced and built upon week to week.
 - What do cameras see? RGB v. IR
 - Kinect Skeletons
 - "Traditional" CV: Blob, Contours and Faces
@@ -28,8 +29,16 @@ Because course topics are organized around parameters of movement, technical top
 - Designing "conversational" interactions in code.
 
 ###Resources
-- Select chapters from [The Viewpoints Book](http://www.amazon.com/The-Viewpoints-Book-Practical-Composition/dp/1559362413) | [PDF](http://www.bam.org/media/4813887/anne-bogart-and-tina-landau-the-viewpoints-book.pdf)
-- Select chapters from [Dynamic Alignment Through Imagery](http://www.amazon.com/Dynamic-Alignment-Through-Imagery-Edition/dp/0736067892) | [Google Books](https://books.google.com/books?id=CBwV_g8DhEMC&lpg=PA2&ots=nRQ2JS3SWv&dq=dynamic%20alignment%20chapters&pg=PP1#v=onepage&q&f=false)
+- Class Google Group. I will be adding you after the first class.
+- There is a workbook that goes along with this class. I will be sharing it with you via the Google Group.
+- All code examples will be pushed to this github repo.
+- Most code examples will also be available in the p5 web editor.
+
+###Additional Resources
+- [The Viewpoints Book](http://www.amazon.com/The-Viewpoints-Book-Practical-Composition/dp/1559362413) | [PDF](http://www.bam.org/media/4813887/anne-bogart-and-tina-landau-the-viewpoints-book.pdf)
+- [Dynamic Alignment Through Imagery](http://www.amazon.com/Dynamic-Alignment-Through-Imagery-Edition/dp/0736067892) | [Google Books](https://books.google.com/books?id=CBwV_g8DhEMC&lpg=PA2&ots=nRQ2JS3SWv&dq=dynamic%20alignment%20chapters&pg=PP1#v=onepage&q&f=false)
+- [Elements of Design](https://www.amazon.com/Elements-Design-Kostellow-Structure-Relationships/dp/1568983298) | [PDF](https://pdfs.semanticscholar.org/db88/ac59d3259d233cdcfd33609c64727b09ad62.pdf)
+- [Interaction of Color](https://www.amazon.com/Interaction-Color-Anniversary-Josef-Albers/dp/0300179359)
 
 ## Week 1: What is interaction?
 - From control to conversation to coincidence, what is the full spectrum of interaction?
@@ -73,7 +82,12 @@ Because course topics are organized around parameters of movement, technical top
    * Direct movement by dividing space or defining space through geometry.
    * Direct movement by creating a terrain.
    * Use movement to define space and terrains.
-   
+
+## Weeks 9-10: Rhythm
+- What is the difference between timing and pacing?
+- Setting a tempo and the element of surprise.
+- Building polyrhythms.
+
 ## Weeks 10-11: Project Development
 ## Showing: Week 12
 
