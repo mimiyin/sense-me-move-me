@@ -29,6 +29,8 @@ function draw() {
     rect(x*cellW, y*cellH, cellW, cellH);
   }
 
+  text("Press mouse to switch modes.", 10, 10);
+
 }
 
 function mousePressed(){
