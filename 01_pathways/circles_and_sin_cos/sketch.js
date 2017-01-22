@@ -7,6 +7,7 @@ circles and the sine and cosine waves.
 
 var circle, speed;
 var d, r, theta, tSpeed;
+var drawCos = false;
 
 function setup() {
   createCanvas(TWO_PI*100, window.innerHeight);
@@ -31,10 +32,12 @@ function draw() {
     ellipse(t*100, circle.y + r*sin(t), 5, 5);
   }
 
-  // Draw all the points of the cos wave until the current "theta"
-  fill(0, 0, 255);
-  for (var t = 0; t < theta; t+=abs(tSpeed)) {
-    ellipse(t*100, circle.y + r*cos(t), 5, 5);
+  if(drawCos){
+    // Draw all the points of the cos wave until the current "theta"
+    fill(0, 0, 255);
+    for (var t = 0; t < theta; t+=abs(tSpeed)) {
+      ellipse(t*100, circle.y + r*cos(t), 5, 5);
+    }
   }
 
   stroke(225);
@@ -86,4 +89,13 @@ function draw() {
 
   //Move forward through the degrees of the circle for the sin and cos calculations
   theta += tSpeed;
+
+  noStroke();
+  rect(0, 0, 500, 30);
+  fill(255);
+  text("Press mouse to show/hide cosine wave.", 10, 20);
+}
+
+function mousePressed(){
+ drawCos = !drawCos;
 }
