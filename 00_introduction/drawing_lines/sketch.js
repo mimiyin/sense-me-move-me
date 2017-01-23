@@ -7,6 +7,7 @@ var mode = 0;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
+  background(255);
 }
 
 function draw() {
@@ -26,8 +27,16 @@ function draw() {
       break;
   }
 
+  stroke(0);
   strokeWeight(sw);
   line(pmouseX, pmouseY, mouseX, mouseY);
+
+  // Draw instructions to screen
+  noStroke();
+  fill(255);
+	rect(0, 0, 500, 50);
+  fill(0);
+  text("Press mouse to change modes. There are 4.", 10, 20);
 }
 
 function mousePressed(){

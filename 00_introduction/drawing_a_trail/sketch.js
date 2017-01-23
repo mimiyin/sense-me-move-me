@@ -38,6 +38,7 @@ function draw() {
     // Draw an ellipse at this location
   	ellipse(locs[l].x, locs[l].y, sz, sz);
 
+    // Draw instructions to screen
     text("Press 'e' to ease. Press 't' to throb.", 10, 20);
   }
 }
