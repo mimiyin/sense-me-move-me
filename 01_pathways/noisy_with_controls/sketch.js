@@ -81,6 +81,7 @@ function draw() {
 function keyPressed() {
   // Presets
   switch(key) {
+    //  Big tspeed, more like random
     case '0':
       interval = 1;
       range = 20;
@@ -89,6 +90,7 @@ function keyPressed() {
       xshift = .5;
       yshift = .5;
       break;
+    // "Normal"
     case '1':
       interval = 1;
       range = 4;
@@ -97,6 +99,7 @@ function keyPressed() {
       xshift = .5;
       yshift = .5;
       break;
+    // Fast
     case '2':
       interval = 1;
       range = 20;
@@ -105,6 +108,7 @@ function keyPressed() {
       xshift = .5;
       yshift = .5;
       break;
+    // Only changes every second. Slow.
     case '3':
       interval = 60;
       range = 2;
@@ -113,6 +117,7 @@ function keyPressed() {
       xshift = .5;
       yshift = .5;
       break;
+    // More vertical.
     case '4':
       interval = 1;
       range = 4;
@@ -121,6 +126,7 @@ function keyPressed() {
       xshift = .5;
       yshift = .5;
     	break;
+    // Moving towards upper-right.
     case '5':
       interval = 1;
       range = 4;

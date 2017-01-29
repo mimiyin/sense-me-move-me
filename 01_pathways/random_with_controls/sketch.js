@@ -60,7 +60,7 @@ function draw() {
   // Print control values to screen
   noStroke();
   fill(0);
-  rect(0, 0, 350, 120);
+  rect(0, 0, 500, 120);
   fill(255);
   textSize(18);
   text("Press ESC to change mode: " + mode, 10, 20);
@@ -74,6 +74,7 @@ function draw() {
 function keyPressed() {
   // Presets
   switch(key) {
+    // "Normal"
     case '1':
       interval = 1;
       range = 4;
@@ -81,6 +82,7 @@ function keyPressed() {
       xshift = 1;
       yshift = 1;
       break;
+    // Fast
     case '2':
       interval = 1;
       range = 50;
@@ -88,6 +90,7 @@ function keyPressed() {
       xshift = 1;
       yshift = 1;
       break;
+    // Only changes every second. Slow.
     case '3':
       interval = 60;
       range = 2;
@@ -95,6 +98,7 @@ function keyPressed() {
       xshift = 1;
       yshift = 1;
       break;
+    // More vertical.
     case '4':
       interval = 30;
       range = 2;
@@ -102,6 +106,7 @@ function keyPressed() {
       xshift = 1;
       yshift = 1;
     	break;
+    // Moving towards upper-right.
     case '5':
       interval = 1;
       range = 1;
@@ -110,7 +115,7 @@ function keyPressed() {
       yshift = .7;
       break;
   }
-  
+
   switch (keyCode){
     case ESCAPE:
       mode++;
