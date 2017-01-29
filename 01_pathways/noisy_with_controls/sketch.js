@@ -67,18 +67,69 @@ function draw() {
   // Print control values to screen
   noStroke();
   fill(0);
-  rect(0, 0, 350, 120);
+  rect(0, 0, 500, 120);
   fill(255);
   textSize(18);
   text("Press ESC to change mode: " + mode, 10, 20);
   text("mode 0. interval (UP/DWN): " + interval + "\trange (RT/LFT): " + nfs(range, 0, 2), 10, 40);
-  text("mode 1. yscl (UP/DWN): " + nfs(yscl, 0, 2), 10, 60);
+  text("mode 1. yscl (UP/DWN): " + nfs(yscl, 0, 2) + "\ttspeed (RT/LFT): " + nfs(tspeed, 0, 2), 10, 60);
   text("mode 2. yshift (DWN/UP): " + nfs(yshift, 0, 2) + "\txshift (RT/LFT): " + nfs(xshift, 0, 2), 10, 80);
   text("Press RETURN to clear canvas.", 10, 100);
 
 }
 
 function keyPressed() {
+  // Presets
+  switch(key) {
+    case '0':
+      interval = 1;
+      range = 20;
+      yscl = 1;
+      tspeed = 1;
+      xshift = .5;
+      yshift = .5;
+      break;
+    case '1':
+      interval = 1;
+      range = 4;
+      yscl = 1;
+      tspeed = 0.01;
+      xshift = .5;
+      yshift = .5;
+      break;
+    case '2':
+      interval = 1;
+      range = 20;
+      yscl = 1;
+      tspeed = 0.01;
+      xshift = .5;
+      yshift = .5;
+      break;
+    case '3':
+      interval = 60;
+      range = 2;
+      yscl = 1;
+      tspeed = 0.01;
+      xshift = .5;
+      yshift = .5;
+      break;
+    case '4':
+      interval = 1;
+      range = 4;
+      yscl = 2;
+      tspeed = 0.01;
+      xshift = .5;
+      yshift = .5;
+    	break;
+    case '5':
+      interval = 1;
+      range = 4;
+      yscl = 1;
+      xshift = .2;
+      yshift = .7;
+      break;
+  }
+
   switch (keyCode){
     case ESCAPE:
       mode++;
@@ -119,8 +170,15 @@ function keyPressed() {
         case DOWN_ARROW:
           yscl -= 0.1;
           break;
+        case RIGHT_ARROW:
+          tspeed += 0.01;
+          break;
+        case LEFT_ARROW:
+          tspeed -= 0.01;
+          break;
       }
       yscl = bottomOut(yscl, 0);
+      tspeed = bottomOut(tspeed, 0.01);
       break;
     case 2:
       switch (keyCode) {

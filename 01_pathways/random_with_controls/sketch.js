@@ -72,6 +72,45 @@ function draw() {
 }
 
 function keyPressed() {
+  // Presets
+  switch(key) {
+    case '1':
+      interval = 1;
+      range = 4;
+      yscl = 1;
+      xshift = 1;
+      yshift = 1;
+      break;
+    case '2':
+      interval = 1;
+      range = 50;
+      yscl = 1;
+      xshift = 1;
+      yshift = 1;
+      break;
+    case '3':
+      interval = 60;
+      range = 2;
+      yscl = 1;
+      xshift = 1;
+      yshift = 1;
+      break;
+    case '4':
+      interval = 30;
+      range = 2;
+      yscl = 2;
+      xshift = 1;
+      yshift = 1;
+    	break;
+    case '5':
+      interval = 1;
+      range = 1;
+      yscl = 1;
+      xshift = 1.5;
+      yshift = .7;
+      break;
+  }
+  
   switch (keyCode){
     case ESCAPE:
       mode++;
