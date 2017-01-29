@@ -23,7 +23,7 @@ function draw() {
   		sw = 100/speed;
       break;
     case 3:
-  		sw = map(speed, 0, 100, 10, 1);
+  		sw = map(speed, 0, 100, 10, 0);
       break;
   }
 

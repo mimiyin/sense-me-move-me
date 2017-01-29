@@ -20,7 +20,7 @@ function draw() {
   x+=10;
 
   // Generate a new random number for the y-position.
-  y = random(height/2) + height/4;
+  y = random(-height/4, height/4) + height/2;
 
   // Draw a line from last frame's position to this frame's.
  	line(px, py, x, y);
