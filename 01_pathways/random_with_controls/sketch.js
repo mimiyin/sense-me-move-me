@@ -14,6 +14,8 @@ var interval;
 var range, yscl;
 // How much to shift right/left, up/down
 var xshift, yshift;
+// Which preset
+var preset = 1;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -53,6 +55,12 @@ function draw() {
   stroke(255);
   line(px, py, x, y);
 
+  //Draw the rectangle of possibility
+  stroke(255, 0, 0, 255*range/32);
+  noFill();
+  rect(x-range, y-(range*yscl), range+(range*xshift), (range*yscl)+(range*yscl*yshift));
+
+
   // Remember current location for next frame
   px = x;
   py = y;
@@ -63,7 +71,7 @@ function draw() {
   rect(0, 0, 500, 120);
   fill(255);
   textSize(18);
-  text("Press ESC to change mode: " + mode, 10, 20);
+  text("mode (ESC): " + mode + "\tpreset (1-6): " + preset, 10, 20);
   text("mode 0. interval (UP/DWN): " + interval + "\trange (RT/LFT): " + nfs(range, 0, 2), 10, 40);
   text("mode 1. yscl (UP/DWN): " + nfs(yscl, 0, 2), 10, 60);
   text("mode 2. yshift (DWN/UP): " + nfs(yshift, 0, 2) + "\txshift (RT/LFT): " + nfs(xshift, 0, 2), 10, 80);
@@ -81,6 +89,7 @@ function keyPressed() {
       yscl = 1;
       xshift = 1;
       yshift = 1;
+      preset = 1;
       break;
     // Fast
     case '2':
@@ -89,6 +98,7 @@ function keyPressed() {
       yscl = 1;
       xshift = 1;
       yshift = 1;
+      preset = 2;
       break;
     // Only changes every second. Slow.
     case '3':
@@ -97,6 +107,7 @@ function keyPressed() {
       yscl = 1;
       xshift = 1;
       yshift = 1;
+      preset = 3;
       break;
     // More vertical.
     case '4':
@@ -105,6 +116,7 @@ function keyPressed() {
       yscl = 2;
       xshift = 1;
       yshift = 1;
+      preset = 4;
     	break;
     // Moving towards upper-right.
     case '5':
@@ -113,9 +125,22 @@ function keyPressed() {
       yscl = 1;
       xshift = 1.5;
       yshift = .7;
+      preset = 5;
+      break;
+        // Moving towards upper-right.
+    case '6':
+      interval = 180;
+      range = 1;
+      yscl = 1;
+      xshift = 1;
+      yshift = 1;
+      preset = 6;
       break;
   }
 
+
+  // Change mode to change which
+  // vars the arrow keys control
   switch (keyCode){
     case ESCAPE:
       mode++;
@@ -129,6 +154,7 @@ function keyPressed() {
       break;
   }
 
+  // Arrow key controls
   switch (mode) {
     case 0:
       switch (keyCode) {
@@ -180,7 +206,7 @@ function keyPressed() {
   }
 }
 
-// Bottom out at 0
+// Bottom out at...
 function bottomOut(p, bottom) {
   return p < bottom ? bottom : p;
 }
