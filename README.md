@@ -21,7 +21,7 @@
 - [Processing](https://processing.org/) | [Reference](https://processing.org/reference/)
 
 ## Additional Resources
-- [The Viewpoints Book](http://www.amazon.com/The-Viewpoints-Book-Practical-Composition/dp/1559362413) | [PDF](http://www.bam.org/media/4813887/anne-bogart-and-tina-landau-the-viewpoints-book.pdf)
+- [The Viewpoints Book](http://www.amazon.com/The-Viewpoints-Book-Practical-Composition/dp/1559362413) | [PDF](https://stilluntitledproject.files.wordpress.com/2014/11/anne-bogart-and-tina-landau-the-viewpoints-book.pdf)
 - [Dynamic Alignment Through Imagery](http://www.amazon.com/Dynamic-Alignment-Through-Imagery-Edition/dp/0736067892) | [Google Books](https://books.google.com/books?id=CBwV_g8DhEMC&lpg=PA2&ots=nRQ2JS3SWv&dq=dynamic%20alignment%20chapters&pg=PP1#v=onepage&q&f=false)
 - [Elements of Design](https://www.amazon.com/Elements-Design-Kostellow-Structure-Relationships/dp/1568983298) | [PDF](https://pdfs.semanticscholar.org/db88/ac59d3259d233cdcfd33609c64727b09ad62.pdf)
 - [The Nature of Code Book](http://natureofcode.com/book/)
