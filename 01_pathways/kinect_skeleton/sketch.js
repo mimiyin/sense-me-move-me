@@ -8,8 +8,9 @@ Showing selected joint
 var kinectron = null;
 // Keep track of selected joint
 var j;
-// Director of jointsSPINEBASE,
+// Directory of joints
 var joints = [
+  "SPINEBASE",
   "SPINEMID",
   "NECK",
   "HEAD",
