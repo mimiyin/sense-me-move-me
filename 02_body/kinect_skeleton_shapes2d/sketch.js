@@ -1,8 +1,7 @@
 /*
 Mimi Yin NYU-ITP
-Drawing skeleton joints
-Showing selected joint
- */
+Drawing 2D body.
+*/
 
 // Declare kinectron
 var kinectron = null;
@@ -32,11 +31,6 @@ function draw() {
 
 function bodyTracked(body) {
 	background(0);
-
-  noFill();
-
-  push();
-  translate(width/2, height/2);
 
   // Draw all the joints
   kinectron.getJoints(drawJoint);
@@ -91,6 +85,7 @@ function bodyTracked(body) {
         vertex(head.x, head.y);
         vertex(footRight.x, footRight.y);
         vertex(shoulderLeft.x, shoulderLeft.y);
+        vertex(hipLeft.x, hipLeft.y);
       endShape(CLOSE);
       break;
     case 1:
@@ -104,14 +99,7 @@ function bodyTracked(body) {
         curveVertex(shoulderLeft.x, shoulderLeft.y);
       endShape(CLOSE);
       break;
-    case 2:
-      // Draw bezier
-      strokeWeight(20);
-      bezier(hipLeft.x, hipLeft.y, head.x, head.y, kneeRight.x, kneeRight.y, thumbRight.x, thumbRight.y);
-      bezier(hipLeft.x, hipLeft.y, footRight.x, footRight.y, footLeft.x, footLeft.y, thumbRight.x, thumbRight.y);
-      break;
     }
-  pop();
 
   textSize(18);
   stroke(255);
@@ -120,9 +108,10 @@ function bodyTracked(body) {
 }
 
 // Scale the data to fit the screen
+// Move it to the center of the screen
 // Return it as a vector
 function getPos(joint) {
-  return createVector(joint.cameraX*width/2, -joint.cameraY*width/2, joint.cameraZ*width/2);
+  return createVector((joint.cameraX * width/2) + width/2, (-joint.cameraY * width/2) + height/2);
 }
 
 // Draw skeleton
@@ -134,12 +123,12 @@ function drawJoint(joint) {
   //Kinect location data needs to be normalized to canvas size
   stroke(255);
   strokeWeight(5);
-	point(pos.x, pos.y);
+  point(pos.x, pos.y);
 }
 
 function keyPressed(){
   mode++;
-  mode%=3;
+  mode%=2;
 }
 
 

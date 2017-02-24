@@ -32,10 +32,11 @@ function draw() {
 function bodyTracked(body) {
   background(255);
 
-  rotateY(TWO_PI*mouseX/width);
+  rotateY(2*TWO_PI*mouseX/width);
+  rotateX(3*TWO_PI*mouseY/width);
 
   // Draw all the joints
-  //kinectron.getJoints(drawJoint);
+  kinectron.getJoints(drawJoint);
 
   // Get all the joints off the tracked body and do something with them
 
@@ -76,19 +77,20 @@ function bodyTracked(body) {
 
   push();
   translate(spineBase.x, spineBase.y, spineBase.z);
-  sphere(100);
+  sphere(10);
   pop();
 
   push();
-  translate(elbowLeft.x, elbowLeft.y, elbowLeft.z);
-  sphere(100);
+  translate(handLeft.x, handLeft.y, handLeft.z);
+  sphere(50);
   pop();
 
-  // Put the head on the left hand
+  // Put the head on the left hand as if it were the base of the spine
   // Make it a box
+  var offset = p5.Vector.sub(head, spineBase).add(handLeft);
   push();
-  translate(head.x, head.y, head.z);
-  box(200);
+  translate(offset.x, offset.y, offset.z);
+  box(100);
   pop();
 
 }
