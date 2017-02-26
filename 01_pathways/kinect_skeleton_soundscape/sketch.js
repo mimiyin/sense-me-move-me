@@ -138,7 +138,7 @@ function bodyTracked(body) {
     buddha.setVolume(buddhaVol);
 
     // Scale the size of the buddha image to the speed of the head
-    var sz = d/100;
+    var sz = 0.2; //d/100;
     // Scale the alpha of the buddha image to the volume of the sound
     var a = buddhaVol;
     tint(255, a);
