@@ -33,18 +33,28 @@ void draw() {
 
   noFill();
 
+  // Get image of tracked bodies from kinect
   opencv.loadImage(kinect.getBodyTrackImage());
   opencv.gray();
   opencv.threshold(threshold);
   PImage dst = opencv.getOutput();
   //image(dst, 0, 0);
 
+  // Find contours in tracked bodies image
   ArrayList<Contour> contours = opencv.findContours(false, false);
 
+  // If there's a contour
   if (contours.size() > 0) {
+    // Defining a circular pathway
+    float x = sin(frameCount*0.01)*cos(frameCount*0.01)*width + width/2;
+    float y = cos(frameCount*0.01)*sin(frameCount*0.02)*width + height/2;
+    PVector mover = new PVector(x, y);
+    
+    // For every contour
     for (Contour contour : contours) {
-
+      // Set resolution of contour polygon
       contour.setPolygonApproximationFactor(polygonFactor);
+      // If there are more than 50 points in the polygon
       if (contour.numPoints() > 50) {
 
         noFill();
@@ -52,7 +62,9 @@ void draw() {
         strokeWeight(10);
 
         beginShape();
+        // Get every point in the contour
         for (PVector point : contour.getPolygonApproximation ().getPoints()) {
+          // Get rid of edge points
           if (point.x < 10 || point.x > dst.width-10) continue;
 
           // Scale the contour to 2x its size
@@ -62,13 +74,8 @@ void draw() {
           if (mode > 0) {
             switch(mode) {
             case 1:
-              // Defining a circular pathway
-              float x = sin(frameCount*0.01)*cos(frameCount*0.01)*width + width/2;
-              float y = cos(frameCount*0.01)*sin(frameCount*0.02)*width + height/2;
-              PVector mouse = new PVector(x, y);
-
               // Define a vector radiating from the contour point to the mouse
-              offset = PVector.sub(mouse, point);
+              offset = PVector.sub(mover, point);
               offset.setMag(250);
               point.add(offset);
               break;
