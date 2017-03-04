@@ -1,35 +1,22 @@
 /*
 Mimi Yin NYU-ITP
-Drawing skeleton joints
-Showing selected joint
+Mapping joint movement to sounds.
  */
 
 // Declare kinectron
 var kinectron = null;
 
 // Sound files
-var yo, zing, buddha, marimba, rain, thunder;
-// Volume of buddha file
-var buddhaVol = 0;
-// Image of buddha
-var buddhaImg;
+var marimba, rain, thunder;
 
 // Keep track of previous locations for 3 joints
 var pHead = null;
-var pSpineBase = null;
-var pHandLeft = null;
 
-function preload(){
+function preload() {
   // Load sound files
-  yo = loadSound("data/yo.wav");
-  zing = loadSound("data/zing.mp3");
-  buddha = loadSound("data/buddha.wav");
   marimba = loadSound("data/marimba.mp3");
   rain = loadSound("data/rain.mp3");
   thunder = loadSound("data/thunder.mp3");
-
-  // Load image of buddha
-  buddhaImg = loadImage("data/buddha.jpg");
 }
 
 function setup() {
@@ -37,7 +24,7 @@ function setup() {
 
   // Define and create an instance of kinectron
   //kinectron = new Kinectron("172.16.228.147");
-  kinectron = new Kinectron("192.168.0.117");
+  kinectron = new Kinectron("192.168.0.112");
 
   // CONNECT TO MIRCROSTUDIO
   //kinectron = new Kinectron("kinectron.itp.tsoa.nyu.edu");
@@ -51,10 +38,7 @@ function setup() {
   // Cue sounds
   marimba.loop();
   rain.loop();
-  buddha.setVolume(buddhaVol);
-  buddha.loop();
 
-  imageMode(CENTER);
   background(0);
 }
 
@@ -63,7 +47,7 @@ function draw() {
 }
 
 function bodyTracked(body) {
-	background(0);
+  background(0);
 
   // Draw all the joints
   kinectron.getJoints(drawJoint);
@@ -110,74 +94,34 @@ function bodyTracked(body) {
 
   // As the hands get closer, the marimba quiets down
   var d = p5.Vector.dist(handLeft, handRight);
-  marimba.setVolume(d/100);
-  // strokeWeight(d/10);
-  // line(handLeft.x, handLeft.y, handRight.x, handRight.y);
+  marimba.setVolume(d / 100);
 
   // As the left hand gets closer to the head, the rain gets louder, non-linearly
   var d = p5.Vector.dist(handLeft, head);
-  rain.setVolume(10/d);
-  // strokeWeight(10000/d);
-  // line(handLeft.x, handLeft.y, head.x, head.y);
+  rain.setVolume(10 / d);
 
-  if(pHead != null) {
+  if (pHead != null) {
     var d = p5.Vector.dist(pHead, head);
 
     // Speed of head sets off thunder
-    if(d > 50) {
+    // Only set it off 1x
+    if (d > 50 && (thunder.currentTime() == 0 || thunder.currentTime() > 2)) {
       thunder.jump(0);
-      thunder.play();
+      // Wait half a second to play to avoid distortion
+      setTimeout(function () {
+        thunder.play();
+      }, 500);
     }
-
-    // Constantly moving head, makes buddha talk
-    if(d > 10) {
-      buddhaVol++;
-    }
-    // But Buddha is always fading
-    buddhaVol -= 0.1;
-    buddha.setVolume(buddhaVol);
-
-    // Scale the size of the buddha image to the speed of the head
-    var sz = 0.2; //d/100;
-    // Scale the alpha of the buddha image to the volume of the sound
-    var a = buddhaVol;
-    tint(255, a);
-    // Show image of buddha
-    image(buddhaImg, head.x, head.y, buddhaImg.width*sz, buddhaImg.height*sz);
-
-    // Speed of spineBase sets off zing
-    var d = p5.Vector.dist(pSpineBase, spineBase);
-    if(d > 50) {
-      zing.jump(0);
-      zing.play();
-    }
-    // Scale textsize to speed of spine base
-    noStroke();
-    textSize(d);
-    text("Zing", spineBase.x, spineBase.y);
-
-    // Speed of left hand sets off yo
-    var d = p5.Vector.dist(pHandLeft, handLeft);
-    if(d > 50) {
-      yo.jump(0);
-      yo.play();
-    }
-
-    // Scale textsize to speed of left hand
-    textSize(d);
-    text("Yo", handLeft.x-50, handLeft.y);
   }
 
-  // Remember positions for next frame
+  // Remember position for next frame
   pHead = head;
-  pSpineBase = spineBase;
-  pHandLeft = handLeft;
 }
 
 // Scale the data to fit the screen
 // Return it as a vector
 function getPos(joint) {
-  return createVector(joint.cameraX * width/2 + width/2, -joint.cameraY * width/2 + height/2, joint.cameraZ * width/2);
+  return createVector(joint.cameraX * width / 2 + width / 2, -joint.cameraY * width / 2 + height / 2, joint.cameraZ * width / 2);
 }
 
 // Draw skeleton
@@ -191,5 +135,3 @@ function drawJoint(joint) {
   strokeWeight(5);
   point(pos.x, pos.y);
 }
-
-

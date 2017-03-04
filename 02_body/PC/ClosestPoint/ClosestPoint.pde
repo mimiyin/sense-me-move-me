@@ -110,7 +110,6 @@ public void draw() {
       float distance = repel.mag()/range;
       repel.setMag(100/distance);
       point.add(repel);
-
       strokeWeight(2);
       point(point.x, point.y, point.z);
       break;

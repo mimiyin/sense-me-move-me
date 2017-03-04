@@ -34,7 +34,9 @@ void draw() {
   noFill();
 
   // Get image of tracked bodies from kinect
-  opencv.loadImage(kinect.getBodyTrackImage());
+  PImage bodies = kinect.getBodyTrackImage();
+  //image(bodies, 0, 0);
+  opencv.loadImage(bodies);
   opencv.gray();
   opencv.threshold(threshold);
   PImage dst = opencv.getOutput();
