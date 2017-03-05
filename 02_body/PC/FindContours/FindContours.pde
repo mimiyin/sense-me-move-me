@@ -51,7 +51,7 @@ void draw() {
     float x = sin(frameCount*0.01)*cos(frameCount*0.01)*width + width/2;
     float y = cos(frameCount*0.01)*sin(frameCount*0.02)*width + height/2;
     PVector mover = new PVector(x, y);
-    
+
     // For every contour
     for (Contour contour : contours) {
       // Set resolution of contour polygon
@@ -99,14 +99,14 @@ void draw() {
         endShape();
       }
     }
+    // Draw the "mouse"
+    if (mode == 1) {
+      noStroke();
+      fill(255, 0, 0);
+      ellipse(mover.x, mover.y, 50, 50);
+    }
   }
 
-  // Draw the "mouse"
-  if (mode == 1) {
-    noStroke();
-    fill(255, 0, 0);
-    ellipse(mouse.x, mouse.y, 50, 50);
-  }
 
   noStroke();
   fill(255);
