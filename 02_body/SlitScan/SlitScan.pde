@@ -40,17 +40,17 @@ void draw() {
     // To a location moving slowly across the canvas.
     loadPixels();
     for (int y = 0; y < video.height; y++){
-      int setPixelIndex = y*width + drawPositionX/10;
+      int setPixelIndex = y*width + drawPositionX;
       int getPixelIndex = y*video.width  + videoSliceX;
-      //pixels[setPixelIndex] = video.pixels[getPixelIndex];
-      noStroke();
-      fill(video.pixels[getPixelIndex], 32);
-      float sz = random(100); 
-      ellipse(drawPositionX, y*2, sz, sz);
+      pixels[setPixelIndex] = video.pixels[getPixelIndex];
+      //noStroke();
+      //fill(video.pixels[getPixelIndex], 32);
+      //float sz = random(10); 
+      //ellipse(drawPositionX, y*2, sz, sz);
     }
     //updatePixels();
     
-    drawPositionX-=10;
+    drawPositionX--;
     // Wrap the position back to the beginning if necessary.
     if (drawPositionX < 0) {
       drawPositionX = width - 1;

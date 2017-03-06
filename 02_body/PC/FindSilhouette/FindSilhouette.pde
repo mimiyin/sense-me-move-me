@@ -37,8 +37,8 @@ void draw() {
       int offset = y * img.width + x;
       color c = img.pixels[offset];
       
-      // Check to see if pixel is NOT grayscale
-      if (((red(c) + green(c) + blue(c)) / 3) - red(c) > 1 ) {
+      // Check to see if pixel is NOT grayscale-ish
+      if (abs(((red(c) + green(c) + blue(c)) / 3) - red(c)) > 1 ) {
         PVector point = new PVector(x, y);
         PVector end = new PVector();
         switch(mode) {
