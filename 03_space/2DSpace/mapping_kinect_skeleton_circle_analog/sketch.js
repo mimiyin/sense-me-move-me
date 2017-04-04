@@ -1,6 +1,6 @@
 /*
 Mimi Yin NYU-ITP
-Mapping skeleton locations inside circle.
+Mapping Kinect Skeleton locations to floor projection.
  */
 
 // Declare kinectron

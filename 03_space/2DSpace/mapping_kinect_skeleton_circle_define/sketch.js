@@ -1,6 +1,6 @@
 /*
 Mimi Yin NYU-ITP
-Drawing skeleton joints and bones.
+Mapping Kinect Skeleton locations to floor projection.
  */
 
 // Declare kinectron
