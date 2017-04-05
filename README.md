@@ -75,13 +75,7 @@
   - Direct movement by dividing space or defining space through geometry.
   - Direct movement by creating a terrain.
   - Use movement to define space and terrains.
-
-## Weeks 9-10: Rhythm
-
-- What is the difference between timing and pacing?
-- Setting a tempo and the element of surprise.
-- Building polyrhythms.
-
+  
 ## Weeks 10-11: Project Development
 
 ## Showing: Week 12
@@ -98,12 +92,11 @@ We will evaluate the strengths and weaknesses of the various motion-tracking tec
 
 Pre-requisites: Introduction to Computational Media or its equivalent.
 
-The course is organized around 4 ways of understanding motion:
+The course is organized around 3 ways of understanding motion:
 
 1. Pathways
 2. Form
 3. Space
-4. Rhythm
 
 Assignments will consist of a series small studies exploring each topic. Some we will work on together in class. Others you will complete as homework assignments. The class will culminate in a final project and showing.
 
