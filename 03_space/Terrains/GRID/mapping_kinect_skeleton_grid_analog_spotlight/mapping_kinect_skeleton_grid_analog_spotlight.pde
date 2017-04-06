@@ -21,7 +21,7 @@ float xscl, yscl;
 boolean scl;
 
 // Grid
-int sz = 10;
+int sz = 3;
 float diag;
 PImage img;
 

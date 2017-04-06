@@ -16,7 +16,7 @@ void setup() {
   rows = height/rowH;
   diag = sqrt(sq(width) + sq(height));
   //img = loadImage("moonwalk.jpg");
-  img = loadImage("mondrian.jpg");
+  img = loadImage("golem.jpg");
   // Resize the image to fit the screen
   img.resize(width, img.height*width/img.width);
   
@@ -31,6 +31,7 @@ void draw() {
       int x = int(col*colW);
       int y = int(row*rowH);
       float sz = 250*dist(x,y, mouseX, mouseY)/diag;
+      sz += text.width;
       color c = img.get(x, y);
       tint(c, 128);
       image(text, x, y, sz, sz);

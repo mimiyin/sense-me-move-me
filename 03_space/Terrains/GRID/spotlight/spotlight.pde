@@ -1,4 +1,4 @@
-int sz = 10;
+int sz = 3;
 float diag;
 PImage img;
 
@@ -16,8 +16,8 @@ void draw() {
       //float d = dist(x, y, mouseX, mouseY);
       //float nd = d/diag;
       //float c = 255*nd;
-      float c = 255*dist(x, y, mouseX, mouseY)/diag*2;
-      //float c = 255*dist(x, y, mouseX, mouseY)/speed;
+      //float c = 255*dist(x, y, mouseX, mouseY)/diag*2;
+      float c = 255*dist(x, y, mouseX, mouseY)/speed;
       tint(255-c);
       image(img, x, y, sz*2, sz*2);
       //fill(c);
