@@ -21,12 +21,12 @@ float xscl, yscl;
 boolean scl;
 
 // Grid
-int cols = 5;
-int rows = 3;
-float colW, rowH;
+int sz = 10;
+float diag;
+PImage img, text;
 
 void setup() {
-  size(1280, 800);
+  size(1280, 720, P2D);
 
   kinect = new KinectPV2(this);
 
@@ -34,43 +34,48 @@ void setup() {
   kinect.enableSkeleton3DMap(true);
 
   kinect.init();
-  
-  // Calculate size of ceels
-  colW = width/cols;
-  rowH = height/rows;
 
-
+  // Calc diagonal of screen
+  diag = sqrt(sq(width) + sq(height));
+  // Parameters for mapping Kinect data to projection
   // Parameters for mapping Kinect data to projection
   xscl = width/3.2*0.55;
   yscl = -width/3.2*0.6;
   xshift = 0;
   yshift = height/2;
+
+  // Load image to distort
+  img = loadImage("mondrian.jpg");
+  // Resize the image to fit the screen
+  img.resize(width, img.height*width/img.width);
+
+  text = loadImage("texture.png");
 }
 
 void draw() {
-  background(0);
+
+  PVector avgPos = new PVector();
 
   // Get all the tracked skeletons
-  ArrayList<KSkeleton> skeletonArray =  kinect.getSkeleton3d();
-  for (int col = 0; col < cols; col++) {
-    float x = col*colW;
-    for (int row = 0; row < rows; row++) {
-      float y = row*rowH;
-      color c = color(255);
-      // Get position of each skeleton
-      for (int s = 0; s < skeletonArray.size(); s++) {
-        KSkeleton skeleton = (KSkeleton) skeletonArray.get(s);
-        if (skeleton.isTracked()) {
-          KJoint[] joints = skeleton.getJoints();
-          PVector pos = getPos(joints[KinectPV2.JointType_Head]);
-          
-          // Check to see if body is inside this cell
-          if(pos.x > x && pos.x < x+colW && pos.y > y && pos.y < y+rowH) c = color(255, 0, 0);
-        }
-      }
+  ArrayList<KSkeleton> skeletons =  kinect.getSkeleton3d();
+  // Draw the joints for each skeleton
+  for (KSkeleton skeleton : skeletons) {
+    if (skeleton.isTracked()) {
+      KJoint[] joints = skeleton.getJoints();
+      PVector pos = getPos(joints[KinectPV2.JointType_Head]);
+      avgPos.add(pos);
+    }
+  }
+  // Find the average pos
+  avgPos.div(skeletons.size());
 
-      fill(c);
-      rect(x, y, colW, rowH);
+  for (int x = 0; x < width; x+=sz) {
+    for (int y = 0; y < height; y += sz) {
+      float sz = 500*dist(x, y, avgPos.x, avgPos.y)/diag;
+      sz += text.width;
+      color c = img.get(x, y);
+      tint(c, 128);
+      image(text, x, y, sz, sz);
     }
   }
 }

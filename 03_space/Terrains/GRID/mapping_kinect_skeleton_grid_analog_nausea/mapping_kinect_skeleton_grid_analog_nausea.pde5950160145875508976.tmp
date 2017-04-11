@@ -26,7 +26,7 @@ float diag;
 PImage img, text;
 
 void setup() {
-  size(displayWidth, displayHeight, P2D);
+  size(1280, 800, P2D);
 
   kinect = new KinectPV2(this);
 
@@ -48,31 +48,31 @@ void setup() {
   img = loadImage("mondrian.jpg");
   // Resize the image to fit the screen
   img.resize(width, img.height*width/img.width);
-  
+
   text = loadImage("texture.png");
 }
 
 void draw() {
-  background(0);
+
   PVector avgPos = new PVector();
-  
+
   // Get all the tracked skeletons
   ArrayList<KSkeleton> skeletons =  kinect.getSkeleton3d();
+  // Draw the joints for each skeleton
+  for (KSkeleton skeleton : skeletons) {
+    if (skeleton.isTracked()) {
+      KJoint[] joints = skeleton.getJoints();
+      PVector pos = getPos(joints[KinectPV2.JointType_Head]);
+      avgPos.add(pos);
+    }
+  }
+  // Find the average pos
+  avgPos.div(skeletons.size());
+
   for (int x = 0; x < width; x+=sz) {
     for (int y = 0; y < height; y += sz) {
-      // Draw the joints for each skeleton
-      for (KSkeleton skeleton : skeletons) {
-        if (skeleton.isTracked()) {
-          KJoint[] joints = skeleton.getJoints();
-          PVector pos = getPos(joints[KinectPV2.JointType_Head]);
-          avgPos.add(pos);
-        }
-      }
-
-      // Find the average distance
-      avgPos.div(skeletons.size()).div(diag);
-
-      float sz = 250*PVector.dist(avgPos, new PVector(x,y));
+      float sz = 500*dist(x, y, avgPos.x, avgPos.y)/diag;
+      sz += text.width;
       color c = img.get(x, y);
       tint(c, 128);
       image(text, x, y, sz, sz);

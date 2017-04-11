@@ -4,7 +4,7 @@ float colW, rowH;
 int mode = 0;
 
 void setup() {
-  size(1280, 720, P2D);
+  size(1280, 800, P2D);
   initialize();
 }
 

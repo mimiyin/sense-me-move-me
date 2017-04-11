@@ -42,7 +42,7 @@ float xscl, yscl;
 boolean scl;
 
 void setup() {
-  size(1024, 768);
+  size(1280, 800, P2D);
 
   kinect = new KinectPV2(this);
 
@@ -82,43 +82,46 @@ void draw() {
   //translate the scene to the center 
 
   ArrayList<KSkeleton> skeletons =  kinect.getSkeleton3d();
+  // Scale speed of movement based on distance from mouse
+  // The closer the faster
+  // How would you make it the opposite?
+  PVector avgPos = new PVector(0, 0);
+
+  //Get positions for each skeleton
+  for (KSkeleton skeleton : skeletons) {
+    if (skeleton.isTracked()) {
+      KJoint[] joints = skeleton.getJoints();
+
+      // Only use head to seed Voronoi
+      PVector pos = getPos(joints[KinectPV2.JointType_Head]);
+      avgPos.add(pos);
+    }
+  }
+  if (skeletons.size() > 0) {
+    // Average position of all the skeletons
+    avgPos.div(skeletons.size());
+  }
 
   // UPDATE POINTS FOR MESH
   for ( int p = 0; p < points.length; p++ ) {
     // Temporary variables for location of each point and its speed.
     Vec2D point = points[p];
-
-    // Scale speed of movement based on distance from mouse
-    // The closer the faster
-    // How would you make it the opposite?
-    PVector avgPos = new PVector();
-
-    //Get positions for each skeleton
-    for (KSkeleton skeleton : skeletons) {
-      if (skeleton.isTracked()) {
-        KJoint[] joints = skeleton.getJoints();
-
-        // Only use head to seed Voronoi
-        PVector pos = getPos(joints[KinectPV2.JointType_Head]);
-        avgPos.add(pos);
-      }
-    }
-    // Average position of all the skeletons
-    avgPos.div(skeletons.size());
+    Vec2D speed = speeds[p];
 
     // Avg position affects mesh
-    float mult = 0.5 / PVector.dist(avgPos, new PVector(point.x, point.y)) / diag;
+    float mult = 0.5 / (dist(avgPos.x, avgPos.y, point.x, point.y) / diag*2);
 
     // Bounce point @edges
     if (point.x < 0 || point.x > width) {
-      speeds[p].x *= -1;
+      speed.x *= -1;
       point.x = point.x < 0 ? 5 : width-5;
     }
     if (point.y < 0 || point.y > height) {
-      speeds[p].y *= -1;
+      speed.y *= -1;
       point.y = point.y < 0 ? 5 : height-5;
     }   
-    speeds[p].scale(mult);
+
+    point.addSelf(speed.scale(mult));
   }
 
   // CREATE VORONOI MESH

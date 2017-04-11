@@ -26,7 +26,7 @@ float diag;
 PImage img;
 
 void setup() {
-  size(displayWidth, displayHeight, P2D);
+  size(1280, 800, P2D);
 
   kinect = new KinectPV2(this);
 
@@ -39,9 +39,9 @@ void setup() {
   diag = sqrt(sq(width) + sq(height));
   // Parameters for mapping Kinect data to projection
    // Parameters for mapping Kinect data to projection
-  xscl = width/3.2*0.55;
-  yscl = -width/3.2*0.6;
-  xshift = 0;
+  xscl = width;
+  yscl = -height;
+  xshift = width/2;
   yshift = height/2;
   
   // Load image sprite
@@ -50,26 +50,29 @@ void setup() {
 
 void draw() {
   background(0);
+PVector avgPos = new PVector();
 
   // Get all the tracked skeletons
   ArrayList<KSkeleton> skeletons =  kinect.getSkeleton3d();
+  // Draw the joints for each skeleton
+  for (KSkeleton skeleton : skeletons) {
+    if (skeleton.isTracked()) {
+      KJoint[] joints = skeleton.getJoints();
+      PVector pos = getPos(joints[KinectPV2.JointType_Head]);
+      avgPos.add(pos);
+    }
+  }
+  // Find the average pos
+  avgPos.div(skeletons.size());
+  
   for (float x = 0; x < width; x+=sz) {
     for (float y = 0; y < height; y += sz) {
-      float d = 0;
-      // Draw the joints for each skeleton
-      for (KSkeleton skeleton : skeletons) {
-        if (skeleton.isTracked()) {
-          KJoint[] joints = skeleton.getJoints();
-          PVector pos = getPos(joints[KinectPV2.JointType_Head]);
-          d += dist(pos.x, pos.y, x, y)/diag*5;
-        }
-      }
       
-      // Find the average distance
-      d/=skeletons.size();
+      // Calculate distance to avgPos
+      float d = dist(avgPos.x, avgPos.y, x, y); 
       
       // Scale it to a number range from 0 to 255
-      float c = 255*d;
+      float c = 255*d/diag*5;
       
       tint(255-c);
       image(img, x, y, sz*2, sz*2);
@@ -81,7 +84,7 @@ void draw() {
 
 // Scale Kinect data to projection
 PVector getPos(KJoint joint) {
-  return new PVector(joint.getZ()*xscl + xshift, joint.getX()*yscl + yshift);
+  return new PVector(joint.getX()*xscl + xshift, joint.getY()*yscl + yshift);
 }
 
 void keyPressed() {

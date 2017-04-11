@@ -57,7 +57,7 @@ void draw()
     // Scale speed of movement based on distance from mouse
     // The closer the faster
     // How would you make it the opposite?
-    float scl = 0.5/(dist(point.x, point.y, mouseX, mouseY)/diag*2);
+    float scl = 0.5 / (dist(point.x, point.y, mouseX, mouseY)/diag*2);
 
     switch(mode) {
     case 0: // Move points according to their speed
