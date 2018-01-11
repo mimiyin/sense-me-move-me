@@ -13,7 +13,7 @@ var inputs = ["Position", "Speed", "Acceleration"];
 var mappings = ["Linear", "Non-Linear", "Step", "Sawtooth", "Sin", "Noise", "Linear-Random", "Random"];
 
 function preload() {
-  sound = loadSound("data/police.mp3");
+  sound = loadSound("data/guitar.wav");
 }
 
 function setup() {

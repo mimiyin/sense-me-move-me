@@ -43,10 +43,10 @@ void draw() {
       int setPixelIndex = y*width + drawPositionX;
       int getPixelIndex = y*video.width  + videoSliceX;
       pixels[setPixelIndex] = video.pixels[getPixelIndex];
-      //noStroke();
-      //fill(video.pixels[getPixelIndex], 32);
-      //float sz = random(10); 
-      //ellipse(drawPositionX, y*2, sz, sz);
+      noStroke();
+      fill(video.pixels[getPixelIndex], 32);
+      float sz = 1; //random(10); 
+      ellipse(drawPositionX, y*2, sz, sz);
     }
     //updatePixels();
     

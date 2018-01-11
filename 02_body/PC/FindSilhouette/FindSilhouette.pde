@@ -36,9 +36,12 @@ void draw() {
     for (int y = 0; y < img.height; y+=10) {
       int offset = y * img.width + x;
       color c = img.pixels[offset];
+      float r = red(c);
+      float g = green(c);
+      float b = blue(c);
       
       // Check to see if pixel is NOT grayscale-ish
-      if (abs(((red(c) + green(c) + blue(c)) / 3) - red(c)) > 1 ) {
+      if (abs(r-g) + abs(r-b) + abs(b-g) > 1)  {
         PVector point = new PVector(x, y);
         PVector end = new PVector();
         switch(mode) {
