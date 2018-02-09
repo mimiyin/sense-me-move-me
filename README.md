@@ -1,4 +1,4 @@
-# Syllabus - Work in Progress
+# Syllabus
 
 - Spring 2017, Mondays, 12:10-3:05PM in Room 50
 - Mimi Yin, mimi.yin@nyu.edu
